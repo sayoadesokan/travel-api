@@ -4,9 +4,13 @@
 
 Welcome to the API documentation for \*_Thriller Travel API \*_. This guide will provide you with the necessary information to interact with the API endpoints and utilize their functionalities. Please follow the instructions below to get started.
 
+## Documentation
+
+The URL for the documentation is: `https://easy-capris-bat.cyclic.cloud`
+
 ## Base URL
 
-The base URL for all API requests is: `https://api.yourdomain.com`
+The base URL for all API requests is: `https://easy-capris-bat.cyclic.cloud`
 
 ## Authentication
 
