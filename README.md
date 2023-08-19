@@ -1,4 +1,4 @@
-# Thriller Travels Documentation
+# Thriller Travels
 
 ## Introduction
 
