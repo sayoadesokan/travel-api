@@ -2,85 +2,106 @@
 
 ## Introduction
 
-Welcome to the API documentation for \*_Thriller Travel API \*_. This guide will provide you with the necessary information to interact with the API endpoints and utilize their functionalities. Please follow the instructions below to get started.
+Welcome to the API documentation for \*_Thriller Travel API \*_. This guide will provide you with the necessary information to interact with the \*SIX BUILT API \*\_ endpoints and utilize their functionalities. Please follow the instructions below to get started.
 
 ## Documentation
 
-The URL for the documentation is: `https://easy-capris-bat.cyclic.cloud`
+The URL for the documentation: `https://documenter.getpostman.com/view/22494723/2s9Y5SWR7Y`
 
 ## Base URL
 
 The base URL for all API requests is: `https://easy-capris-bat.cyclic.cloud`
 
-## Authentication
+# Endpoints
 
-Some endpoints may require authentication. You will need to include an `Authorization` header in your requests with a valid authentication token.
+## Flight API
 
-Example:
+### GET /details
 
-```bash
- Authorization: Bearer YOUR_AUTH_TOKEN
+- Get flight details.
+- Endpoint: `/v1/ap1/details`
 
-```
+### GET /date
 
-## Endpoints
+- Get flight details by date.
+- Endpoint: `/v1/api/date`
 
-### [Endpoint Name]
+### GET /status
 
-**Description:** [Description of what this endpoint does]
+- Get flight details by status.
+- Endpoint: `/v1/api/status`
 
-**URL:** `/api/endpoint-url`
+### GET /departure
 
-**Method:** `[HTTP Method]`
+- Get flight details by departure.
+- Endpoint: `/v1/api/depature`
 
-#### Request Parameters
+### GET /airline
 
-- `param1`: [Description of param1]
-- `param2`: [Description of param2]
-- ...
+- Get flight details by airline.
+- Endpoint: `/v1/api/airline`
 
-#### Request Body
+### GET /arrival
+
+- Get flight details by arrival.
+- Endpoint: `/v1/api/arrival`
+
+### GET USERS FLIGHT DETAILS
+
+**Description:** To get the flight Details
+
+**URL:** `https://easy-capris-bat.cyclic.cloud/v1/api/details`
+
+**Method:** `[GET]`
+
+#### Request Body using the user ticket code (IATA):
 
 ```json
 {
-  "field1": "value1",
-  "field2": "value2"
+  "flightIataCode": "SQ305"
 }
 ```
 
-Response
-Status Code: [HTTP Status Code]
+Response: returns flight details, does not return an empty array-object
+Status Code: 200 OK
 
 ```json
-{
+  "pagination": {
+    "limit": 100,
+    "offset": 0,
+    "count": 2,{
   "success": true,
   "data": {
     "field1": "value1",
     "field2": "value2"
   }
 }
+    "total": 2
+  },
+  "flights": [{}]
 ```
 
 Status Code: 400 Bad Request
 
 ```json
 {
-  "success": false,
-  "error": "Error message"
+  "error": {
+    "name": "NOT FOUND",
+    "statusCode": 400,
+    "description": "Invalid flight IATA code. Please provide a valid code."
+  }
 }
 ```
 
 Example
 Request:
 
-[HTTP Method] /api/endpoint-url?param1=value1&param2=value2
-Authorization: Bearer YOUR_AUTH_TOKEN
+[GET STATUS] `https://easy-capris-bat.cyclic.cloud/v1/api/details`
 Request Body:
 
 ```json
 {
-  "field1": "value1",
-  "field2": "value2"
+  "flightIataCode": "SQ305"
 }
 ```
 
@@ -89,11 +110,17 @@ Status Code: 200 OK
 Response Body:
 
 ```json
+["active", "landed"]
+```
+
+Status Code: 400 Bad Request
+
+```json
 {
-  "success": true,
-  "data": {
-    "field1": "value1",
-    "field2": "value2"
+  "error": {
+    "name": "NOT FOUND",
+    "statusCode": 400,
+    "description": "Invalid flight IATA code. Please provide a valid code."
   }
 }
 ```
