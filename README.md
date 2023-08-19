@@ -71,26 +71,25 @@ Request:
 
 [HTTP Method] /api/endpoint-url?param1=value1&param2=value2
 Authorization: Bearer YOUR_AUTH_TOKEN
+Request Body:
 
 ```json
-
-Request Body:
 {
   "field1": "value1",
-  "field2": "value2",
+  "field2": "value2"
 }
 ```
 
 Response:
 Status Code: 200 OK
+Response Body:
 
 ```json
-Response Body:
 {
   "success": true,
   "data": {
     "field1": "value1",
-    "field2": "value2",
+    "field2": "value2"
   }
 }
 ```
