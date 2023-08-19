@@ -52,8 +52,7 @@ Status Code: [HTTP Status Code]
   "success": true,
   "data": {
     "field1": "value1",
-    "field2": "value2",
-    ...
+    "field2": "value2"
   }
 }
 ```
@@ -70,33 +69,32 @@ Status Code: 400 Bad Request
 Example
 Request:
 
-```json
 [HTTP Method] /api/endpoint-url?param1=value1&param2=value2
 Authorization: Bearer YOUR_AUTH_TOKEN
+
+```json
 
 Request Body:
 {
   "field1": "value1",
   "field2": "value2",
-  ...
 }
 ```
 
 Response:
-
-```json
 Status Code: 200 OK
 
+```json
 Response Body:
 {
   "success": true,
   "data": {
     "field1": "value1",
     "field2": "value2",
-    ...
   }
 }
 ```
 
-#Conclusion
+# Conclusion
+
 You have successfully learned how to interact with Triller travel endpoints. Please feel free to explore the different endpoints and functionalities provided by the API. If you encounter any issues or have any questions, please refer to the provided contact information.
